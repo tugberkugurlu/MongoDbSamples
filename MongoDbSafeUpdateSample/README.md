@@ -8,7 +8,6 @@ A "Category" document:
     {
         "_id": 1,
         "name": "Electronics",
-        "slug": "electronics",
         "lastUpdatedOn": ISODate("2014-05-29T09:04:07.409Z"),
         "images": [
             {
