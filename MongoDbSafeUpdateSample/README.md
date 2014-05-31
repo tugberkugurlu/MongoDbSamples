@@ -47,3 +47,14 @@ TODO: Write it down
 
  - What if an update takes long time?
  - What if an update to a product document fails during the update process?
+
+## Message Queueing System
+
+### Rules and Things to Consider
+
+ - When an update or delete requested, try to stick a queue message immediately.
+ - However, a queue item is not quaranteed to be queued after the update operation is completed because of lots of reasons.
+ - So, we need to be able to detect that a document is updated/deleted and successfully queued to be processed. 
+   With this information in place, we can now have a worker process to watch the collection for unhealthy updates 
+   (unhealthy means that updated but could not be queued immediately) and create queue items for that.
+ - 
